@@ -20,6 +20,19 @@ app.use(
   ensureCorrectUser,
   postRoutes);
 
+app.get('/api/posts', loginRequired, async function(req,res,next){
+  try {
+let posts = await db.Posts.find()
+  .sort({createdAt: 'desc'})
+  .populate('user', {
+    username: true,
+    profileImageUrl: true
+  })
+  return res.status(200).json(posts);
+  } catch(err) {
+    return next(err)
+  }
+})
   app.use(function(req, res, next) {
   let err = new Error("Not Found");
   err.status = 404;
