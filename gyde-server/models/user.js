@@ -18,7 +18,13 @@ const userSchema = new mongoose.Schema({
   },
   profileImageUrl: {
     type: String
+  },
+  posts: [
+    {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Post'
   }
+]
 });
 
 userSchema.pre('save', async function(next){
