@@ -7,5 +7,5 @@ mongoose.connect('mongodb://localhost/gyde', {
   useMongoClient: true
 });
 
-
+module.exports.User = require('./user');
 
