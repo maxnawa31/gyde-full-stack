@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import '../styles/Navbar.css';
 class Navbar extends Component {
   render() {
     return(
-      <div>
-        <div>
-          <Link to ='/'>
-          <img src="" alt=""/>
-          </Link>
-        </div>
-        <ul>
-          <li>
-            <Link to='/signup'>Sign Up</Link>
-          </li>
-          <li>
-            <Link to='/signin'>Sign Ip</Link>
-          </li>
-        </ul>
+
+      <div className='navbar'>
+        <Link to ='/'>Gyde</Link>
+        <Link to = '/'>Home</Link>
+        <Link to = '/signup'>Sign Up </Link>
+        <Link to = '/signin'>Sign In </Link>
       </div>
+
     );
   }
 }
