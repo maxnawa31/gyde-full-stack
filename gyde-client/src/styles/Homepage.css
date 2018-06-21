@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+.homepage-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-half {
+  height: 100%;
+  width: 50%;
+  /* border: 1px solid black; */
+
+  padding-left: 1%;
+}
+
+.heading {
+  font-size: 4rem;
+  width: 70%;
+}
+
+.sub-heading {
+  margin-top: 10%;
+  width: 70%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+
+
+.signup-button {
+  height: 3rem;
+  width: 7rem;
+  border-radius: 5%;
+  margin-bottom: 5%;
+}
+.signup-button a {
+  text-decoration: none;
+}
+
+.signin-button {
+  height: 3rem;
+  border-radius: 5%;
+  margin-left: 2%;
+  width: 7rem;
+  margin-bottom: 5%;
+}
+.signin-button a {
+  text-decoration: none;
+}
+
+/* @media (min-width: 800px){
+.heading {
+    font-size: 3.5rem;
+  }
+} */
+
+.right-half {
+  height: 100%;
+  width: 50%;
+  /* border: 1px solid black; */
+  background-color: #f9fafb;
+}
+
+.bullet-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.bullet {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.bullet h3 {
+  line-height: 0.5rem;
+  font-family: 'Karla';
+  margin-left: 2%;
+}
+
+.circle-green {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(2, 214, 92);
+}
+.circle-blue {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(0, 148, 255);
+}
+.circle-purple {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(162, 68, 219);
+}
+.circle-red {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(235, 87, 87);
+}
+
+
+@media (max-width: 720px){
+  .heading {
+      font-size: 3.5rem;
+    }
+  }
