@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../styles/AuthForm.css'
 export default class AuthForm extends Component {
   constructor(props) {
     super(props);
@@ -11,32 +11,49 @@ export default class AuthForm extends Component {
     }
   }
 
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const authType = this.props.signup ? 'signup' : 'signin';
+    this.props.onAuth(authType, this.state).then(() => {
+      console.log('logged in')
+    })
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]:e.target.value
     })
   }
   render(){
+  let signUpForm = ''
   const { email, username, password, profileImageUrl } = this.state;
   const { heading, buttonText, signup } = this.props;
+  if(signup) {
+    signUpForm = [<label htmlFor="username">Username</label>,
+
+    <input className='text-box' id='username' name='username' onChange={this.handleChange} value={username}type="text"/>,
+
+
+    <label htmlFor="image-url">Image Url</label>,
+
+
+    <input className='text-box' id='image-url' name='profileImageUrl' onChange={this.handleChange} type="text"/>
+  ]
+
+  }
   return(
     <div>
-      <form onSubmit={this.handleSubmit}>
+      <form className='flex-container' onSubmit={this.handleSubmit}>
         <h2>{heading}</h2>
         <label htmlFor="email">Email</label>
-        <input id='email' name='email' onChange={this.handleChange} value={email}type="text"/>
+        <input className='text-box' id='email' name='email' onChange={this.handleChange} value={email}type="text"/>
         <label htmlFor="password">Password</label>
-        <input id='password' name='password' onChange={this.handleChange} type="password"/>
+        <input className='text-box' id='password' name='password' onChange={this.handleChange} type="password"/>
         {
-          signup && (
-            <div>
-              <label htmlFor="username">username</label>
-              <input id='username' name='username' onChange={this.handleChange} value={email}type="text"/>
-              <label htmlFor="image-url">Image Url</label>
-              <input id='image-url' name='profileImageUrl' onChange={this.handleChange} type="text"/>
-            </div>
-          )
+          signUpForm
         }
+        <button type='submit'>{buttonText}</button>
       </form>
     </div>
   )
