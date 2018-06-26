@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/Homepage.css'
 
-const Homepage = () => (
+const Homepage = ({ currentUser }) => {
+  if(!currentUser.isAuthenticated) {
     <div className='text-container'>
         <div className='main-text'>
           <h2>We are here to change<br/>Ed-Tech for the better.</h2>
@@ -15,9 +16,16 @@ const Homepage = () => (
           <button className='button'><Link to ='/signin'>Sign In</Link></button>
         </div>
     </div>
+  }
+  return (
+    <div>
+      <h1>Hello you made it</h1>
+    </div>
+  )
 
 
 
-)
+
+}
 
 export default Homepage;

@@ -16,7 +16,9 @@ export default class AuthForm extends Component {
     e.preventDefault();
     const authType = this.props.signup ? 'signup' : 'signin';
     this.props.onAuth(authType, this.state).then(() => {
-      console.log('logged in')
+      this.props.history.push('/')
+    }).catch(() => {
+      return;
     })
   }
 
@@ -28,7 +30,9 @@ export default class AuthForm extends Component {
   render(){
   let signUpForm = ''
   const { email, username, password, profileImageUrl } = this.state;
-  const { heading, buttonText, signup } = this.props;
+  const { heading, buttonText, signup, errors, removeError, history } = this.props;
+
+
   if(signup) {
     signUpForm = [<label htmlFor="username">Username</label>,
 
@@ -42,10 +46,15 @@ export default class AuthForm extends Component {
   ]
 
   }
+
+  history.listen(() => {
+    removeError();
+  })
   return(
     <div>
       <form className='flex-container' onSubmit={this.handleSubmit}>
         <h2>{heading}</h2>
+        {errors.message && (<div>{errors.message}</div>)}
         <label htmlFor="email">Email</label>
         <input className='text-box' id='email' name='email' onChange={this.handleChange} value={email}type="text"/>
         <label htmlFor="password">Password</label>
