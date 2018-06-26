@@ -1,133 +1,77 @@
 @import url('https://fonts.googleapis.com/css?family=Karla');
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('../images/connect.jpg');
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  margin: 0;
+}
 
-.homepage-container {
+.text-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.left-half {
-  height: 100%;
+.description-text {
+  font-family: 'Karla';
+  font-size: 1.25rem;
+  color: white;
   width: 50%;
-  /* border: 1px solid black; */
-
-  padding-left: 3%;
+  margin-left: 5%;
 }
-
-.heading {
-  font-size: 4rem;
-  width: 70%;
+.main-text {
+  font-family: 'Karla';
+  font-size: 2rem;
+  color: white;
+  width: 50%;
+  margin-left: 5%;
   margin-top: 5%;
-}
-
-.sub-heading {
-  margin-top: 10%;
-  width: 70%;
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
-  margin-top: 10%;
-}
-
-
-.signup-button {
-  height: 3rem;
-  width: 7rem;
-  border-radius: 5%;
-  margin-bottom: 5%;
-}
-.signup-button a {
-  text-decoration: none;
-  color: black;
-}
-
-.signin-button {
-  height: 3rem;
-  border-radius: 5%;
-  margin-left: 2%;
-  width: 7rem;
-  margin-bottom: 5%;
-}
-.signin-button a {
-  text-decoration: none;
-}
-
-/* @media (min-width: 800px){
-.heading {
-    font-size: 3.5rem;
-  }
-} */
-
-.right-half {
-  height: 95vh;
-  width: 50%;
-  /* border: 1px solid black; */
-  background-color: #f9fafb;
-}
-
-.bullet-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5%;
-  margin-top: 4%;
-}
-
-.bullet {
-  display: flex;
-  flex-direction: row;
+  /* border: 1px solid white; */
   margin-top: 5%;
-  margin-bottom: 5%;
 }
 
-.bullet h3 {
-  line-height: 1px;
+.button {
+  height: 2.5rem;
+  margin-left: 5%;
+  width: 7rem;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+
+}
+.button a {
+  text-decoration: none;
   font-family: 'Karla';
-  font-size: 1.5rem;
-  margin-left: 2%;
-
+  font-size: 1rem;
 }
 
-.circle-green {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: rgb(2, 214, 92);
-}
-.circle-blue {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: rgb(0, 148, 255);
-}
-.circle-purple {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: rgb(162, 68, 219);
-}
-.circle-red {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: rgb(235, 87, 87);
-}
 
-.text-column {
-  display: flex;
-  flex-direction: row;
-}
 
-.text-column p {
-  width: 50%;
-  margin-left: 6.5%;
-  margin-top: -4%;
-  color: rgb(106, 115, 122);
 
-}
-
-@media (max-width: 720px){
-  .heading {
-      font-size: 3.5rem;
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .main-text {
+      font-size: 1.5rem;
     }
+}
+
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
   }

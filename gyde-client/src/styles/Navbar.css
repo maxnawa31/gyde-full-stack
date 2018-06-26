@@ -2,12 +2,13 @@
 .navbar {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   /* border: 2px solid black; */
   /* padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 1%; */
-  padding-bottom: 0.5%;
+    padding-bottom: 0.5%;
+    background-color: white;
 }
 
 .navbar a, p {
@@ -17,8 +18,35 @@
   text-decoration: none;
   color: black;
   border: 0.5px solid transparent;
+  outline: none;
+  cursor: pointer;
+
 }
 
 .navbar a:hover {
   border-bottom: 0.5px solid black;
 }
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar {
+      padding: 3%;
+    }
+}
+
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+  }
