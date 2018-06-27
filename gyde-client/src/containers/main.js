@@ -12,7 +12,7 @@ const Main = props => {
       <Switch>
         <Route exact path='/' render={props => <Homepage currentUser = {currentUser} {...props}/>}/>
         <Route exact path='/signin' render={props => <AuthForm removeError={removeError} errors={errors} onAuth={authUser} buttonText='Log In' heading='Welcome Back' {...props}/>}/>
-        <Route exact path='/signup' render={props => <AuthForm removeError={removeError} errors={errors} onAuth={authUser} signup buttonText='Sign Up' heading='Join Gyde Today' {...props}/>}/>
+        <Route exact path='/signup' render={props => <AuthForm removeError={removeError} errors={errors} onAuth={authUser} signup = 'signup' buttonText='Sign Up' heading='Join Gyde Today' {...props}/>}/>
         </Switch>
     </div>
   )
@@ -20,6 +20,7 @@ const Main = props => {
 
 
 function mapStateToProps(state) {
+  debugger;
   return {
     currentUser: state.currentUser,
     errors: state.errors
