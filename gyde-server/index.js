@@ -22,7 +22,7 @@ app.use(
 
 app.get('/api/posts', loginRequired, async function(req,res,next){
   try {
-let posts = await db.Posts.find()
+let posts = await db.Post.find()
   .sort({createdAt: 'desc'})
   .populate('user', {
     username: true,
