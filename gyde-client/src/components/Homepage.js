@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/Homepage.css'
-
+import PostTimeline from './PostTimeline';
 const Homepage = ({ currentUser }) => {
   if(!currentUser.isAuthenticated) {
     <div className='text-container'>
@@ -18,8 +18,8 @@ const Homepage = ({ currentUser }) => {
     </div>
   }
   return (
-    <div>
-      <h1>Hello you made it</h1>
+    <div className='post-container'>
+      <PostTimeline/>
     </div>
   )
 

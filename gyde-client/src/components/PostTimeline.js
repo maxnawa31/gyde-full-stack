@@ -8,3 +8,5 @@ const PostTimeLine = props => {
     </div>
   )
 }
+
+export default PostTimeLine;
